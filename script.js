@@ -55,28 +55,28 @@ const textNodes = [
             }
         ]
     },
-    // { - Fix error
-    //     id: 2,
-    //     text: 'You venture forth in search of answers to where you are when you come across a merchant.'
-    //     // options: [
-    //     //     {
-    //     //         text: 'Trade the goo for a sword',
-    //     //         requiredState: (currentState) => currentState.blueGoo,
-    //     //         setState: { blueGoo: false, sword: true},
-    //     //         nextText: 3
-    //     //     },
-    //     //     {
-    //     //         text: 'Trade the goo for a shield',
-    //     //         requiredState: (currentState) => currentState.blueGoo,
-    //     //         setState: { blueGoo: false, shield: true},
-    //     //         nextText: 3
-    //     //     }
-    //         // {
-    //         //    text: 'Ignore the merchant',
-    //         //    nextText: 3 
-    //         // }
-    //     ]
-    // },
+    {
+        id: 2,
+        text: 'You venture forth in search of answers to where you are when you come across a merchant.',
+        options: [
+            {
+                text: 'Trade the goo for a sword',
+                requiredState: (currentState) => currentState.blueGoo,
+                setState: { blueGoo: false, sword: true},
+                nextText: 3
+            },
+            {
+                text: 'Trade the goo for a shield',
+                requiredState: (currentState) => currentState.blueGoo,
+                setState: { blueGoo: false, shield: true},
+                nextText: 3
+            },
+            {
+               text: 'Ignore the merchant',
+               nextText: 3 
+            }
+        ]
+    },
     {
         id: 3,
         text: 'After leaving the merchant you start to feel tired and stumble upon a small town next to a dangerous looking castle.',
@@ -95,16 +95,16 @@ const textNodes = [
             }
         ]
     },
-    // { - Fix error
-    //     id: 4,
-    //     text: 'You are so tried that you fall asleep while exploring the castle and are killed by some terrible monster in your sleep.'
-    //     options: [
-    //         {
-    //             text: 'Restart',
-    //             nextText: -1
-    //         }
-    //     ]
-    // },
+    {
+        id: 4,
+        text: 'You are so tried that you fall asleep while exploring the castle and are killed by some terrible monster in your sleep.',
+        options: [
+            {
+                text: 'Restart',
+                nextText: -1
+            }
+        ]
+    },
     {
         id: 5,
         text: 'Without any money to but a room you break into the nearest inn and fall asleep. After a few hours of sleep the owner of the inn finds you and has the town guard lock you in a cell.',
