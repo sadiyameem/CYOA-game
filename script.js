@@ -1,5 +1,5 @@
 const textElement = document.getElementById('text')
-const optionButtons = document.getElementById('option-buttons')
+const optionButtonsElement = document.getElementById('option-buttons')
 
 let state = {}
 
@@ -12,7 +12,7 @@ function showTextNode(textNodeIndex) {
     const textNode = textNodes.find(textNode => textNode.id === textNodeIndex)
     textElement.innerText = textNode.text
     while (optionButtonsElement.firstChild) {
-        optionBUttonselement.removeChild(optionButtonsElement.firstChild)
+        optionButtonsElement.removeChild(optionButtonsElement.firstChild)
     }
 
     textNode.options.forEach(option => {
@@ -97,7 +97,7 @@ const textNodes = [
     },
     {
         id: 4,
-        text: 'You are so tried that you fall asleep while exploring the castle and are killed by some terrible monster in your sleep.',
+        text: 'You are so tired that you fall asleep while exploring the castle and are killed by some terrible monster in your sleep.',
         options: [
             {
                 text: 'Restart',
@@ -107,7 +107,7 @@ const textNodes = [
     },
     {
         id: 5,
-        text: 'Without any money to but a room you break into the nearest inn and fall asleep. After a few hours of sleep the owner of the inn finds you and has the town guard lock you in a cell.',
+        text: 'Without any money to buy a room you break into the nearest inn and fall asleep. After a few hours of sleep the owner of the inn finds you and has the town guard lock you in a cell.',
         options: [
             {
                 text: 'Restart',
@@ -117,7 +117,7 @@ const textNodes = [
     },
     {
         id: 6,
-        text: 'You wake up well rested and full of energy reday to explore the nearby castle.',
+        text: 'You wake up well rested and full of energy ready to explore the nearby castle.',
         options: [
             {
                 text: 'Explore the castle',
@@ -135,8 +135,8 @@ const textNodes = [
             },
             {
                 text: 'Attack it with your sword',
-                requiredState: (currentState) => currentState.State.shield,
-                nextTetx: 9
+                requiredState: (currentState) => currentState.sword,
+                nextText: 9
             },
             {
                 text: 'Hide behind your shield',
@@ -152,7 +152,7 @@ const textNodes = [
     },
     {
         id: 8,
-        text: 'Your attempts to run are in vain and the monster easily catches.',
+        text: 'Your attempts to run are in vain and the monster easily catches you.',
         options: [
             {
                 text: 'Restart',
@@ -171,11 +171,35 @@ const textNodes = [
         ]
     },
     {
-        id: 11,
+        id: 10,
         text: 'You threw your jar of goo at the monster and it exploded. After the dust settled you saw the monster was destroyed. Seeing you victory you decide to claim this castle as your live out the rest of your days there.,',
         options: [
             {
                 text: 'Congratulations. Play Again.',
+                nextText: -1
+            }
+        ]
+    },
+    {
+        id: 11,
+        text: 'The blueGoo splashes onto the monster and begins glowing intensely. The creature lets out a roar before dissolving into the smoke. In the center of the room, a golden crown rests on a stone pedestal.',
+        options: [
+            {
+                text: 'Take the crown',
+                nextText: 12
+            },
+            {
+                text: 'Leave the crown',
+                nextText: 13
+            }
+        ]
+    },
+    {
+        id: 12,
+        text: 'As you place the crown on your head, the castle walls tremble. You have claimed over the land. You rule wisely for many years.',
+        options: [
+            {
+                text: 'Play Agian',
                 nextText: -1
             }
         ]
