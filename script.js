@@ -42,72 +42,69 @@ function selectOption(option) {
 const textNodes = [
     {
         id: 1,
-        text: 'You wake up in a strange place and you see a jar of blue goo near you.',
+        text: 'You are a young bunny living in the meadow. One morning, you notice strange footprints leading into the forest.',
         options: [
             {
-                text: 'Take goo',
+                text: 'Follow the footprints',
                 setState: { blueGoo: true },
                 nextText: 2
             },
             {
-                text: 'Leave goo',
+                text: 'Ignore them and play in the meadow',
                 nextText : 2
             }
         ]
     },
     {
         id: 2,
-        text: 'You venture forth in search of answers to where you are when you come across a merchant.',
+        text: 'You follow the footprints and find a mysterious glowing carrot.',
         options: [
             {
-                text: 'Trade the goo for a sword',
+                text: 'Take the glowing carrot',
                 requiredState: (currentState) => currentState.blueGoo,
                 setState: { blueGoo: false, sword: true},
                 nextText: 3
             },
             {
-                text: 'Trade the goo for a shield',
+                text: 'Leave it alone',
                 requiredState: (currentState) => currentState.blueGoo,
                 setState: { blueGoo: false, shield: true},
                 nextText: 3
             },
-            {
-               text: 'Ignore the merchant',
-               nextText: 3 
-            }
         ]
     },
     {
         id: 3,
-        text: 'After leaving the merchant you start to feel tired and stumble upon a small town next to a dangerous looking castle.',
+        text: 'You spend the day playing in the meadow, but a fox sneaks near the burrow. You hear crying from the elder rabbits.',
         options: [
             {
-                text: 'Explore the castle',
+                text: 'Help warn the burrow',
                 nextText: 4,
             },
             {
-                text: 'Find a room to sleep at in the town',
+                text: 'Hide in the grass',
                 nextText: 5
             },
-            {
-                text: 'Find some hay in a stable to sleep in',
-                nextText: 6
-            }
         ]
     },
     {
         id: 4,
-        text: 'You are so tired that you fall asleep while exploring the castle and are killed by some terrible monster in your sleep.',
+        text: 'Deeper in the forest, you meet a wise owl who offers guidance. He says you can either try to find the hidden Bunny Treasure or help protect the burrow from the fox.',
         options: [
             {
-                text: 'Restart',
-                nextText: -1
+                text: 'Seek the Bunny Treasure',
+                nextText: 6
+            },
+
+            {
+                text: 'Protect the burrow',
+                nextText: 7
             }
         ]
     },
     {
         id: 5,
-        text: 'Without any money to buy a room you break into the nearest inn and fall asleep. After a few hours of sleep the owner of the inn finds you and has the town guard lock you in a cell.',
+        text: 'The fox spots you while you hide! You barely escape, but you learn the importance of helping your burrow.',
         options: [
             {
                 text: 'Restart',
@@ -117,52 +114,41 @@ const textNodes = [
     },
     {
         id: 6,
-        text: 'You wake up well rested and full of energy ready to explore the nearby castle.',
+        text: 'You follow clues to an ancient tree where the Bunny Treasure is hidden. A puzzle blocks your way.',
         options: [
             {
-                text: 'Explore the castle',
-                nextText: 7
+                text: 'Solve the puzzle',
+                nextText: 8
+            },
+            {
+                text: 'Leave the treasure and return home',
+                nextText: 9
             }
         ]
     },
     {
         id: 7,
-        text: 'While exploring the castle you come across a horrible monster in your path.',
+        text: 'You rally the other rabbits and set clever traps. The fox is scared off, and your burrow is safe!',
         options: [
             {
-                text: 'Try to run',
-                nextText: 8
-            },
-            {
-                text: 'Attack it with your sword',
-                requiredState: (currentState) => currentState.sword,
-                nextText: 9
-            },
-            {
-                text: 'Hide behind your shield',
-                requiredState: (currentState) => currentState.shield,
+                text: 'Celebrate with the burrow',
                 nextText: 10
             },
-            {
-                text: 'Throw the blue goo at it',
-                requiredState: (currentState) => currentState.blueGoo,
-                nextText: 11
-            }
         ]
     },
     {
         id: 8,
-        text: 'Your attempts to run are in vain and the monster easily catches you.',
+        text: 'You solve the puzzle and find the Bunny Treasure: a unlimited supply of carrots. You return to your burrow as a hero!',
         options: [
             {
-                text: 'Restart',
+                text: 'Play Again',
                 nextText: -1
             }
         ]
     },
     {
         id: 9,
-        text: 'You foolishly thought this monster could be slain with a single sword.',
+        text: 'You leave the treasure but return safely to your burrow. Life goes on peacefully with no problems.',
         options: [
             {
                 text: 'Restart',
@@ -172,7 +158,7 @@ const textNodes = [
     },
     {
         id: 10,
-        text: 'You threw your jar of goo at the monster and it exploded. After the dust settled you saw the monster was destroyed. Seeing you victory you decide to claim this castle as your live out the rest of your days there.,',
+        text: 'The burrow celebrates your bravery. You are honored as a defender of the meadow!',
         options: [
             {
                 text: 'Congratulations. Play Again.',
@@ -180,30 +166,7 @@ const textNodes = [
             }
         ]
     },
-    {
-        id: 11,
-        text: 'The blueGoo splashes onto the monster and begins glowing intensely. The creature lets out a roar before dissolving into the smoke. In the center of the room, a golden crown rests on a stone pedestal.',
-        options: [
-            {
-                text: 'Take the crown',
-                nextText: 12
-            },
-            {
-                text: 'Leave the crown',
-                nextText: 13
-            }
-        ]
-    },
-    {
-        id: 12,
-        text: 'As you place the crown on your head, the castle walls tremble. You have claimed over the land. You rule wisely for many years.',
-        options: [
-            {
-                text: 'Play Agian',
-                nextText: -1
-            }
-        ]
-    }
+
 ]
 
 startGame()
