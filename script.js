@@ -42,124 +42,130 @@ function selectOption(option) {
 const textNodes = [
     {
         id: 1,
-        text: 'You are a fluffy bunny named Pancake. Today, you hop to the garden, excited to munch on carrots, but something seemed off.',
+        text: 'You are a young bunny living in the meadow. One morning, you notice strange footprints leading into the forest.',
         options: [
             {
-                text: 'Investigate the garden',
-                setState: { curious: true },
+                text: 'Follow the footprints',
+                setState: { blueGoo: true },
                 nextText: 2
             },
             {
-                text: 'Play in the meadow instead',
+                text: 'Ignore them and play in the meadow',
                 nextText : 2
             }
         ]
     },
     {
         id: 2,
-        text: 'You discover that all of the carrots are missing! The only thing you see are holes in the ground where the carrots should be.',
+        text: 'You follow the footprints and find a mysterious glowing carrot.',
         options: [
             {
-                text: 'Figure out who the culprit is',
-                requiredState: (currentState) => currentState.curious,
-                setState: { curious: false, brave: true},
+                text: 'Take the glowing carrot',
+                requiredState: (currentState) => currentState.blueGoo,
+                setState: { blueGoo: false, sword: true},
                 nextText: 3
             },
             {
-                text: 'Ignore it and hop away sadly',
+                text: 'Leave it alone',
                 requiredState: (currentState) => currentState.blueGoo,
-                setState: { curious: false, },
+                setState: { blueGoo: false, shield: true},
                 nextText: 3
             },
         ]
     },
     {
         id: 3,
-        text: 'You spend the day hopping around the meadow, but the missing carrots still make you sad.',
+        text: 'You spend the day playing in the meadow, but a fox sneaks near the burrow. You hear crying from the elder rabbits.',
         options: [
             {
-                text: 'Restart',
-                nextText: -1,
+                text: 'Help warn the burrow',
+                nextText: 4,
+            },
+            {
+                text: 'Hide in the grass',
+                nextText: 5
             },
         ]
     },
     {
         id: 4,
-        text: 'While hopping through the meadow, you find a group of squirrels munching on the carrots behind a bush. You need a plan.',
+        text: 'Deeper in the forest, you meet a wise owl who offers guidance. He says you can either try to find the hidden Bunny Treasure or help protect the burrow from the fox.',
         options: [
             {
-                text: 'Ask the squirrels to share the carrots',
-                setState: { friendly: true },
-                nextText: 5
+                text: 'Seek the Bunny Treasure',
+                nextText: 6
             },
 
             {
-                text: 'Take the carrots back for yourself',
-                setState: { brave: false },
-                nextText: 6
+                text: 'Protect the burrow',
+                nextText: 7
             }
         ]
     },
     {
         id: 5,
-        text: 'The squirrels agree to share. You all nibble carrots together.',
+        text: 'The fox spots you while you hide! You barely escape, but you learn the importance of helping your burrow.',
         options: [
             {
-                text: 'Enjoy the day with your new friends',
+                text: 'Restart',
                 nextText: -1
-            },
+            }
         ]
     },
     {
         id: 6,
-        text: 'You try to be sneaky and make an attempt to grab the carrots and make a run for it, but the squirrels knew right away and ran with them.',
+        text: 'You follow clues to an ancient tree where the Bunny Treasure is hidden. A puzzle blocks your way.',
         options: [
             {
-                text: 'Go back to the meadow alone',
-                nextText: -1
+                text: 'Solve the puzzle',
+                nextText: 8
+            },
+            {
+                text: 'Leave the treasure and return home',
+                nextText: 9
+            }
+        ]
+    },
+    {
+        id: 7,
+        text: 'You rally the other rabbits and set clever traps. The fox is scared off, and your burrow is safe!',
+        options: [
+            {
+                text: 'Celebrate with the burrow',
+                nextText: 10
             },
         ]
     },
-//     {
-//     //     id: 7,
-//     //     text: 'You rally the other rabbits and set clever traps. The fox is scared off, and your burrow is safe!',
-//     //     options: [
-//     //         {
-//     //             text: 'Celebrate with the burrow',
-//     //             nextText: 10
-//     //         },
-//     //     ]
-//     // },
-//     // {
-//     //     id: 8,
-//     //     text: 'You solve the puzzle and find the Bunny Treasure: a unlimited supply of carrots. You return to your burrow as a hero!',
-//     //     options: [
-//     //         {
-//     //             text: 'Play Again',
-//     //             nextText: -1
-//     //         }
-//     //     ]
-//     // },
-//     // {
-//     //     id: 9,
-//     //     text: 'You leave the treasure but return safely to your burrow. Life goes on peacefully with no problems.',
-//     //     options: [
-//     //         {
-//     //             text: 'Restart',
-//     //             nextText: -1
-//     //         }
-//     //     ]
-//     // },
-//     // {
-//     //     id: 10,
-//     //     text: 'The burrow celebrates your bravery. You are honored as a defender of the meadow!',
-//     //     options: [
-//     //         {
-//     //             text: 'Congratulations. Play Again.',
-//     //             nextText: -1
-//     //         }
-//     //     ]
-//     // },
+    {
+        id: 8,
+        text: 'You solve the puzzle and find the Bunny Treasure: a unlimited supply of carrots. You return to your burrow as a hero with the carrots!',
+        options: [
+            {
+                text: 'Play Again',
+                nextText: -1
+            }
+        ]
+    },
+    {
+        id: 9,
+        text: 'You leave the treasure but return safely to your burrow. Life goes on peacefully with no problems.',
+        options: [
+            {
+                text: 'Restart',
+                nextText: -1
+            }
+        ]
+    },
+    {
+        id: 10,
+        text: 'The burrow celebrates your bravery. You are honored as a defender of the meadow!',
+        options: [
+            {
+                text: 'Congratulations. Play Again.',
+                nextText: -1
+            }
+        ]
+    },
 
 ]
 
