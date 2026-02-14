@@ -46,12 +46,12 @@ const textNodes = [
         options: [
             {
                 text: 'Follow the footprints',
-                setState: { blueGoo: true },
+                setState: { carrot: true },
                 nextText: 2
             },
             {
                 text: 'Ignore them and play in the meadow',
-                nextText : 2
+                nextText : 3
             }
         ]
     },
@@ -61,14 +61,14 @@ const textNodes = [
         options: [
             {
                 text: 'Take the glowing carrot',
-                requiredState: (currentState) => currentState.blueGoo,
-                setState: { blueGoo: false, sword: true},
+                requiredState: (currentState) => currentState.carrot,
+                setState: { carrot: false, carrot: true},
                 nextText: 3
             },
             {
                 text: 'Leave it alone',
-                requiredState: (currentState) => currentState.blueGoo,
-                setState: { blueGoo: false, shield: true},
+                requiredState: (currentState) => currentState.carrot,
+                setState: { carrot: false, carrot: true},
                 nextText: 3
             },
         ]
