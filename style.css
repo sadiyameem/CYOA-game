@@ -21,6 +21,7 @@ body {
     padding: 10px;
     border-radius: 5px;
     box-shadow: 0 0 10px 2px rgba(0,0,0,0.3);
+    font-weight: bold;
 }
 
 .btn-grid {
@@ -35,7 +36,8 @@ body {
     border: 1px solid hsl(345, 40%, 80%);
     border-radius: 5px;
     padding: 5px 10px;
-    color: white;
+    color: black;
+    font-weight: bold;
     outline: none;
 }
 
