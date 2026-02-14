@@ -104,7 +104,7 @@ const textNodes = [
     },
     {
         id: 5,
-        text: 'The fox spots you while you hide! You barely escape, but you learn the importance of helping your burrow.',
+        text: 'The fox spots you while you hide! You try to escape, but the fox catches you and eats you alive.',
         options: [
             {
                 text: 'Restart',
@@ -138,7 +138,7 @@ const textNodes = [
     },
     {
         id: 8,
-        text: 'You solve the puzzle and find the Bunny Treasure: a unlimited supply of carrots. You return to your burrow as a hero with the carrots!',
+        text: 'You solve the puzzle and find the Bunny Treasure: a unlimited supply of carrots. You take the treasure and return to your burrow as a hero!',
         options: [
             {
                 text: 'Play Again',
